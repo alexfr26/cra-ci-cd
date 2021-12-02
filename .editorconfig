@@ -12,3 +12,6 @@ indent_size = 4
 
 [*.{json,css}]
 indent_size = 2
+
+[.gitignore]
+insert_final_newline = false
