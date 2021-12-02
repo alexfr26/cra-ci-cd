@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "editorconfig": "editorconfig-checker",
-    "eslint": "eslint src/**/*.js",
-    "stylelint": "stylelint \"src/**/*.{css,scss}\""
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:eslint": "eslint src/**/*.js",
+    "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "test": "npm run lint:editorconfig && npm run lint:eslint && npm run lint:stylelint"
   },
   "repository": {
     "type": "git",
