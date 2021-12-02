@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "color-hex-alpha": "never",
+    "color-named": ["never", { "severity": "warning" }],
+    "comment-pattern": [
+      "^[^\\d]",
+      { "message": "Forbidden to start comments with numbers" }
+    ],
+    "declaration-property-value-disallowed-list": [
+      {
+        "/^border/": ["none"],
+        "outline": ["none"]
+      }
+    ],
+    "no-empty-first-line": true,
+    "property-disallowed-list": ["animation"]
+  }
+}
