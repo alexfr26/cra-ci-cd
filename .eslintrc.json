@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": [],
+  "extends": "airbnb",
+  "parserOptions": { "ecmaVersion": 2020 },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  }
+}
