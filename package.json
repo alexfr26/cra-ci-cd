@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:editorconfig": "editorconfig-checker",
+    "lint:eslint": "eslint src/**/*.js",
+    "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "test": "npm run lint:editorconfig && npm run lint:eslint && npm run lint:stylelint"
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,15 @@
     "url": "https://github.com/alexfr26/cra-ci-cd/issues"
   },
   "homepage": "https://github.com/alexfr26/cra-ci-cd#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "editorconfig-checker": "^4.0.2",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0"
+  }
 }
