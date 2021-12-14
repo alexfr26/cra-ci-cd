@@ -63,6 +63,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './public/index.html',
+      favicon: './public/favicon.svg',
       title: 'React CI-CD',
     }),
 
