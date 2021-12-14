@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const path = require('path');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -7,58 +8,65 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: process.env.NODE_ENV || 'development',
+  mode: process.env.NODE_ENV || 'production',
 
-    context: path.join(__dirname, 'src'),
+  context: path.join(__dirname, 'src'),
 
-    entry: './index.js',
+  entry: { main: './index.js' },
 
-    output: {
-        filename: isDev ? '[name].js' : '[name].[fullhash].js',
-        hashDigestLength: 4,
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: './',
-    },
+  output: {
+    filename: isDev ? '[name].js' : '[name].[fullhash].js',
+    assetModuleFilename: 'assets/[name]_[hash][ext]',
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/',
+    hashDigestLength: 4,
+  },
 
-    resolve: {
-        extensions: ['.js', '.jsx'],
-    },
+  resolve: { extensions: ['.js', '.jsx'] },
 
-    module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+
+      {
+        test: /\.s?css$/,
+        use: [
+          'style-loader',
+
+          {
+            loader: 'css-loader',
+            options: {
+              modules: { localIdentName: '[name]__[local]--[hash:base64:5]' },
             },
+          },
 
-            {
-                test: /\.s?css/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-
-            {
-                test: /\.(png|jpe?g|svg|gif)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name]-[hash:4].[ext]',
-                },
-            },
+          'sass-loader',
         ],
-    },
+      },
 
-    plugins: [
-        new HTMLWebpackPlugin({
-            template: path.join(__dirname, 'public', 'index.html'),
-        }),
-
-        new CleanWebpackPlugin(),
+      {
+        test: /\.(png|jpe?g|svg|gif)$/,
+        type: 'asset',
+      },
     ],
+  },
 
-    devServer: {
-        port: 3333,
-        hot: isDev,
-    },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './public/index.html',
+      title: 'React CI-CD',
+    }),
 
-    stats: 'error-only',
+    new CleanWebpackPlugin(),
+  ],
+
+  devtool: 'source-map',
+
+  devServer: {
+    port: 3333,
+  },
 };
