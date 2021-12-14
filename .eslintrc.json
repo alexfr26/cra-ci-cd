@@ -21,6 +21,7 @@
       { "extensions": [".js", ".jsx"] }
     ],
 
+    "react/jsx-indent": ["error", 4],
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   },
