@@ -8,8 +8,8 @@
     "lint:eslint": "eslint src/**/*.js",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "test": "npm run lint:editorconfig && npm run lint:eslint && npm run lint:stylelint",
-    "dev": "webpack serve",
-    "build": "webpack"
+    "dev": "SET NODE_ENV=development&& webpack serve",
+    "build": "SET NODE_ENV=production&& webpack"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "babel-loader": "^8.2.3",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
     "editorconfig-checker": "^4.0.2",
@@ -40,6 +41,7 @@
     "file-loader": "^6.2.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.44.0",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",
