@@ -8,8 +8,8 @@
     "lint:eslint": "eslint src/**/*.js",
     "lint:stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "test": "npm run lint:editorconfig && npm run lint:eslint && npm run lint:stylelint",
-    "dev": "SET NODE_ENV=development&& webpack serve",
-    "build": "SET NODE_ENV=production&& webpack"
+    "dev": "cross-env NODE_ENV=development webpack serve",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "editorconfig-checker": "^4.0.2",
     "eslint": "^8.3.0",
