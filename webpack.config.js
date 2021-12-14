@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV === 'development';
 // Plugins
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
@@ -35,12 +36,15 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader',
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
 
           {
             loader: 'css-loader',
             options: {
-              modules: { localIdentName: '[name]__[local]--[hash:base64:5]' },
+              modules: {
+                auto: true,
+                localIdentName: isDev ? '[local]' : '[hash:base64:5]',
+              },
             },
           },
 
@@ -62,11 +66,14 @@ module.exports = {
     }),
 
     new CleanWebpackPlugin(),
-  ],
+  ].concat(
+    // eslint-disable-next-line comma-dangle
+    isDev ? [] : MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })
+  ),
 
   devtool: isDev && 'eval-source-map',
 
   devServer: {
-    port: 3333,
+    port: 6666,
   },
 };
