@@ -7,6 +7,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'production',
@@ -66,9 +67,14 @@ module.exports = {
     }),
 
     new CleanWebpackPlugin(),
+
+    new BundleAnalyzerPlugin(),
   ].concat(
-    // eslint-disable-next-line comma-dangle
-    isDev ? [] : MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })
+    /* eslint-disable comma-dangle */
+    isDev
+      ? []
+      : new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })
+    /* eslint-enable comma-dangle */
   ),
 
   devtool: isDev && 'eval-source-map',
