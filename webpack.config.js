@@ -20,7 +20,7 @@ module.exports = {
     filename: isDev ? '[name].js' : '[name].[fullhash].js',
     assetModuleFilename: 'assets/[name]_[hash][ext]',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: 'auto',
     hashDigestLength: 4,
   },
 
@@ -80,6 +80,6 @@ module.exports = {
   devtool: isDev && 'eval-source-map',
 
   devServer: {
-    port: 6666,
+    port: 3000,
   },
 };
