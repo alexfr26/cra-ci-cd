@@ -32,6 +32,9 @@
     ],
 
     "react/jsx-indent": ["error", 4],
+
+    "react/jsx-props-no-spreading": ["error", "never"],
+
     "react/jsx-uses-react": "off",
 
     "react/prop-types": ["error", { "ignore": ["children"] }],
