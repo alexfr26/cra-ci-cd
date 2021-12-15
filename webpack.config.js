@@ -70,7 +70,10 @@ module.exports = {
 
     new CleanWebpackPlugin(),
 
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    }),
   ].concat(
     /* eslint-disable comma-dangle */
     isDev
