@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 
 import styles from './ErrorMessage.module.css';
 
-const ErrorMessage = ({ message }) => <p className={styles.error}>{message}</p>;
+const ErrorMessage = ({ message }) => (
+    <p className={styles.errorMessage}>{message}</p>
+);
 
 ErrorMessage.propTypes = {
     message: PropTypes.string,
