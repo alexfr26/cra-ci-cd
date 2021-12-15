@@ -5,3 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#root {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #0a1929;
+  color: #f1f1e6;
+}

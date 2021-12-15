@@ -11,6 +11,7 @@ quote_type = single
 indent_size = 4
 
 [*.{json,css}]
+[webpack.config.js] 
 indent_size = 2
 
 [.gitignore]
