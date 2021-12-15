@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import NavLink from '../NavLink';
 
 import styles from './Nav.module.css';
 
@@ -10,7 +10,7 @@ const Nav = () => (
             </li>
 
             <li>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/users">Users</NavLink>
             </li>
         </ul>
     </nav>
