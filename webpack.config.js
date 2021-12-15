@@ -20,7 +20,7 @@ module.exports = {
     filename: isDev ? '[name].js' : '[name].[fullhash].js',
     assetModuleFilename: 'assets/[name]_[hash][ext]',
     path: path.join(__dirname, 'dist'),
-    publicPath: 'auto',
+    publicPath: '/',
     hashDigestLength: 4,
   },
 
@@ -65,6 +65,7 @@ module.exports = {
       template: './public/index.html',
       favicon: './public/favicon.svg',
       title: 'React CI-CD',
+      inject: 'body',
     }),
 
     new CleanWebpackPlugin(),
@@ -77,6 +78,18 @@ module.exports = {
       : new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' })
     /* eslint-enable comma-dangle */
   ),
+
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'node_vendors',
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+        },
+      },
+    },
+  },
 
   devtool: isDev && 'eval-source-map',
 
