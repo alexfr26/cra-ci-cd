@@ -33,7 +33,7 @@
 
     "react/jsx-indent": ["error", 4],
 
-    "react/jsx-props-no-spreading": ["error", "never"],
+    "react/jsx-props-no-spreading": ["off"],
 
     "react/jsx-uses-react": "off",
 

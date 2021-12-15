@@ -1,8 +1,9 @@
-.atomSvg {
+.atom-svg {
   display: block;
   width: 150px;
   height: 150px;
   margin: 0 auto;
+  fill: #90caf9;
   animation: rotate 5s linear infinite;
 }
 
@@ -10,6 +11,7 @@
   from {
     transform: rotateZ(0deg);
   }
+
   to {
     transform: rotateZ(360deg);
   }

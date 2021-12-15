@@ -15,7 +15,6 @@
         "outline": ["none"]
       }
     ],
-    "no-empty-first-line": true,
-    "property-disallowed-list": ["animation"]
+    "no-empty-first-line": true
   }
 }
