@@ -11,6 +11,15 @@
     "indent": ["error", 4],
     "no-console": ["error", { "allow": ["warn", "error"] }],
 
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": {
+          "minProperties": 5
+        }
+      }
+    ],
+
     "react/function-component-definition": [
       "warn",
       { "namedComponents": "arrow-function" }
@@ -25,5 +34,6 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"
   },
+
   "ignorePatterns": "dist/"
 }
