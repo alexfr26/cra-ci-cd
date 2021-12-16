@@ -1,5 +1,13 @@
-# CRA CI CD
+# React CI CD
 
 [![Linters Tests](https://github.com/alexfr26/cra-ci-cd/actions/workflows/test.yml/badge.svg)](https://github.com/alexfr26/cra-ci-cd/actions/workflows/test.yml)
+[![Deploy](https://github.com/alexfr26/cra-ci-cd/actions/workflows/deploy.yml/badge.svg)](https://github.com/alexfr26/cra-ci-cd/actions/workflows/deploy.yml)
 
-## Package versions:
+<p align="center">
+<img src="src/assets/atom.svg" alt="" width="50px" height="50px"/>
+</p>
+
+## Deployed Application
+
+- [Heroku](https://cra-ci-cd.herokuapp.com/)
+- [Remote server :)](http://173.82.227.13/alexfr26)
