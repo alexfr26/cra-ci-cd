@@ -10,4 +10,4 @@
 ## Deployed Application
 
 - [Heroku](https://cra-ci-cd.herokuapp.com/)
-- [Remote server :)](https://cra-ci-cd.herokuapp.com/)
+- [Remote server :)](http://173.82.227.13/alexfr26)
